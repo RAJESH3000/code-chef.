@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--){
+	   int sum=0;
+	   int arr[26];
+	   for(int i=0;i<26;i++) cin>>arr[i];
+	   string s;
+	   cin>>s;
+	   set<char> par;
+	   for(int i=0;i<s.length();i++) par.insert(s[i]);
+	   for(int i=0;i<26;i++){
+	       if(par.find(char(i+97))==par.end()) sum+=arr[i];
+	   }
+	   cout<<sum<<endl;
+	    
+	}
+
+	return 0;
+}
