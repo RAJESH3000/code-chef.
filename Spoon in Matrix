@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--){
+	    int row,col;
+	    cin>>row>>col;
+	    vector<char> mat;
+	    for(int i=0;i<row;i++){
+	        for(int j=0;j<col;j++){
+	            char ch;
+	            cin>>ch;
+	            mat.push_back(tolower(ch));
+	        }
+	    }
+	    int flag=0;
+	    for(int i=0;i<(row*col)-4;i++){
+	        if(mat[i]=='s' && mat[i+1]=='p' && mat[i+2]=='o' 
+	        && mat[i+3]=='o' && mat[i+4]=='n')
+	        {
+	            flag=1;
+	            cout<<"There is a spoon!"<<endl;
+	            break;
+	        }
+	        else if(mat[i]=='s' && mat[i+col]=='p' && mat[i+2*col]=='o' 
+	        && mat[i+3*col]=='o' && mat[i+4*col]=='n')
+	        {
+	            flag=1;
+	            cout<<"There is a spoon!"<<endl;
+	            break;
+	        }
+	        else continue;
+	    }
+	    if(flag==0) cout<<"There is indeed no spoon!"<<endl;
+	    
+	}
+	return 0;
+}
